@@ -5,6 +5,11 @@ body {
     padding: 20px;
 }
 
+.container {
+    max-width: 800px; /* 限制整体页面宽度 */
+    margin: 0 auto; /* 居中 */
+}
+
 h1 {
     text-align: center;
     color: #333;
@@ -58,6 +63,9 @@ button {
     padding: 10px 15px; /* 内边距 */
     cursor: pointer; /* 鼠标指针 */
     transition: background-color 0.3s; /* 动画效果 */
+    margin: 20px 0; /* 按钮上下间距 */
+    display: block; /* 按钮块级显示 */
+    width: 100%; /* 按钮宽度 */
 }
 
 button:hover {
@@ -70,4 +78,13 @@ h2 {
 
 h3 {
     color: #555; /* 输出变量标题颜色 */
+    margin-top: 20px; /* 输出变量标题上方间距 */
+}
+
+.output-variable {
+    background-color: #e9f7fe; /* 输出变量背景颜色 */
+    border-left: 5px solid #007BFF; /* 左边框颜色 */
+    padding: 10px; /* 内边距 */
+    margin: 10px 0; /* 上下间距 */
+    border-radius: 4px; /* 圆角 */
 }
