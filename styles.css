@@ -1,0 +1,18 @@
+body {
+    font-family: Arial, sans-serif;
+}
+
+.image-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 10px;
+}
+
+.bending-option {
+    width: 100%;
+    cursor: pointer; /* 鼠标手形光标效果 */
+}
+
+#input-output-area {
+    margin-top: 20px;
+}
