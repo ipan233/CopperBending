@@ -40,6 +40,13 @@ h1 {
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* 阴影效果 */
     padding: 20px; /* 内边距 */
     margin-top: 20px;
+    display: flex; /* 使用flex布局 */
+    justify-content: space-between; /* 左右对齐 */
+}
+
+.input-section, .output-section {
+    flex: 1; /* 平分空间 */
+    margin: 0 10px; /* 左右间距 */
 }
 
 label {
@@ -48,7 +55,8 @@ label {
 }
 
 input[type="number"] {
-    width: calc(100% - 20px); /* 输入框宽度 */
+    width: 100%; /* 输入框宽度 */
+    max-width: 10ch; /* 最大宽度为10个字符 */
     padding: 10px; /* 内边距 */
     border: 1px solid #ccc; /* 边框 */
     border-radius: 4px; /* 圆角 */
@@ -63,9 +71,9 @@ button {
     padding: 10px 15px; /* 内边距 */
     cursor: pointer; /* 鼠标指针 */
     transition: background-color 0.3s; /* 动画效果 */
-    margin: 20px 0; /* 按钮上下间距 */
     display: block; /* 按钮块级显示 */
     width: 100%; /* 按钮宽度 */
+    margin: 20px 0; /* 按钮上下间距 */
 }
 
 button:hover {
