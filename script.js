@@ -5,18 +5,15 @@ function selectOption(option) {
     if (option === 1) {
         inputOutputArea.innerHTML = `
             <h2>方案1 输入变量</h2>
-            <div class="input-grid">
-                <label>水平总长度 L:</label><input type="number" id="L" maxlength="10">
-                <label>垂直总长度 h:</label><input type="number" id="h" maxlength="10">
-                <label>左端到第一尖点 L1:</label><input type="number" id="L1" maxlength="10">
-                <label>第二尖点到右端 L2:</label><input type="number" id="L2" maxlength="10">
-                <label>铜排厚度 T:</label><input type="number" id="T" maxlength="10">
+            <div>
+                <label>水平总长度 L:</label><input type="number" id="L" maxlength="10"><br>
+                <label>垂直总长度 h:</label><input type="number" id="h" maxlength="10"><br>
+                <label>左端到第一尖点 L1:</label><input type="number" id="L1" maxlength="10"><br>
+                <label>第二尖点到右端 L2:</label><input type="number" id="L2" maxlength="10"><br>
+                <label>铜排厚度 T:</label><input type="number" id="T" maxlength="10"><br>
             </div>
             <button onclick="calculateOption1()">计算</button>
-            <div id="output" class="output-grid"></div>
-            <div class="center">
-                <img src="path/to/image7.jpg" alt="Image 7">
-            </div>
+            <div id="output"></div>
         `;
     } else if (option === 2) {
         inputOutputArea.innerHTML = `
