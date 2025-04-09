@@ -6,213 +6,209 @@ function selectOption(option) {
     inputOutputArea.innerHTML = ''; // 清空之前的内容
 
     // 添加返回按钮
-    inputOutputArea.innerHTML += `<button onclick="goBack()">返回首页</button><br>`;
+    inputOutputArea.innerHTML += `<button onclick="goBack()" class="return-btn">返回首页</button><br>`;
 
     if (option === 1) {
         inputOutputArea.innerHTML += `
-            <div style="display: flex; justify-content: space-between;">
-                <div style="flex: 1; padding-right: 20px;">
+            <div class="option-container">
+                <div class="image-section">
+                    <img src="picture/image1.png" alt="方案1" class="scheme-image">
+                </div>
+                <div class="input-section">
                     <h2>方案1</h2>
                     <h3>输入变量</h3>
                     <div>
-                        <div style="display: flex; align-items: center;">
-                            <label style="width: 15ch;">水平总长度 L:</label>
-                            <input type="number" id="L" maxlength="10" style="margin-left: 5px;">
+                        <div class="input-group">
+                            <label>水平总长度 L:</label>
+                            <input type="number" id="L" maxlength="10">
                         </div>
-                        <div style="display: flex; align-items: center;">
-                            <label style="width: 15ch;">垂直总长度 h:</label>
-                            <input type="number" id="h" maxlength="10" style="margin-left: 5px;">
+                        <div class="input-group">
+                            <label>垂直总长度 h:</label>
+                            <input type="number" id="h" maxlength="10">
                         </div>
-                        <div style="display: flex; align-items: center;">
-                            <label style="width: 15ch;">第一尖点 L1:</label>
-                            <input type="number" id="L1" maxlength="10" style="margin-left: 5px;">
+                        <div class="input-group">
+                            <label>第一尖点 L1:</label>
+                            <input type="number" id="L1" maxlength="10">
                         </div>
-                        <div style="display: flex; align-items: center;">
-                            <label style="width: 15ch;">第二尖点 L2:</label>
-                            <input type="number" id="L2" maxlength="10" style="margin-left: 5px;">
+                        <div class="input-group">
+                            <label>第二尖点 L2:</label>
+                            <input type="number" id="L2" maxlength="10">
                         </div>
-                        <div style="display: flex; align-items: center;">
-                            <label style="width: 15ch;">铜排厚度 T:</label>
-                            <input type="number" id="T" maxlength="10" style="margin-left: 5px;">
+                        <div class="input-group">
+                            <label>铜排厚度 T:</label>
+                            <input type="number" id="T" maxlength="10">
                         </div>
-                        <button onclick="calculateOption1()">计算</button>
+                        <button onclick="calculateOption1()" class="calc-btn">计算</button>
                         <div id="output"></div>
                     </div>
-                </div>
-                <div style="flex: 1; display: flex; justify-content: center; align-items: flex-start;">
-                    <img src="picture/image1.png" alt="方案1" style="max-width: 100%; height: auto;">
                 </div>
             </div>
         `;
     } else if (option === 2) {
         inputOutputArea.innerHTML += `
-            <div style="display: flex; justify-content: space-between;">
-                <div style="flex: 1; padding-right: 20px;">
+            <div class="option-container">
+                <div class="image-section">
+                    <img src="picture/image2.png" alt="方案2" class="scheme-image">
+                </div>
+                <div class="input-section">
                     <h2>方案2</h2>
                     <h3>输入变量</h3>
                     <div>
-                        <div style="display: flex; align-items: center;">
-                            <label style="width: 15ch;">垂直总长度 h:</label>
-                            <input type="number" id="h2" maxlength="10" style="margin-left: 5px;">
+                        <div class="input-group">
+                            <label>垂直总长度 h:</label>
+                            <input type="number" id="h2" maxlength="10">
                         </div>
-                        <div style="display: flex; align-items: center;">
-                            <label style="width: 15ch;">第一尖点 L1:</label>
-                            <input type="number" id="L12" maxlength="10" style="margin-left: 5px;">
+                        <div class="input-group">
+                            <label>第一尖点 L1:</label>
+                            <input type="number" id="L12" maxlength="10">
                         </div>
-                        <div style="display: flex; align-items: center;">
-                            <label style="width: 15ch;">第二尖点 L2:</label>
-                            <input type="number" id="L22" maxlength="10" style="margin-left: 5px;">
+                        <div class="input-group">
+                            <label>第二尖点 L2:</label>
+                            <input type="number" id="L22" maxlength="10">
                         </div>
-                        <div style="display: flex; align-items: center;">
-                            <label style="width: 15ch;">铜排厚度 T:</label>
-                            <input type="number" id="T2" maxlength="10" style="margin-left: 5px;">
+                        <div class="input-group">
+                            <label>铜排厚度 T:</label>
+                            <input type="number" id="T2" maxlength="10">
                         </div>
-                        <button onclick="calculateOption2()">计算</button>
+                        <button onclick="calculateOption2()" class="calc-btn">计算</button>
                         <div id="output2"></div>
                     </div>
-                </div>
-                <div style="flex: 1; display: flex; justify-content: center; align-items: flex-start;">
-                    <img src="picture/image2.png" alt="方案2" style="max-width: 100%; height: auto;">
                 </div>
             </div>
         `;
     } else if (option === 3) {
         inputOutputArea.innerHTML += `
-            <div style="display: flex; justify-content: space-between;">
-                <div style="flex: 1; padding-right: 20px;">
+            <div class="option-container">
+                <div class="image-section">
+                    <img src="picture/image3.png" alt="方案3" class="scheme-image">
+                </div>
+                <div class="input-section">
                     <h2>方案3</h2>
                     <h3>输入变量</h3>
                     <div>
-                        <div style="display: flex; align-items: center;">
-                            <label style="width: 15ch;">水平总长度 L:</label>
-                            <input type="number" id="L3" maxlength="10" style="margin-left: 5px;">
+                        <div class="input-group">
+                            <label>水平总长度 L:</label>
+                            <input type="number" id="L3" maxlength="10">
                         </div>
-                        <div style="display: flex; align-items: center;">
-                            <label style="width: 15ch;">第一尖点 L1:</label>
-                            <input type="number" id="L13" maxlength="10" style="margin-left: 5px;">
+                        <div class="input-group">
+                            <label>第一尖点 L1:</label>
+                            <input type="number" id="L13" maxlength="10">
                         </div>
-                        <div style="display: flex; align-items: center;">
-                            <label style="width: 15ch;">第二尖点 L2:</label>
-                            <input type="number" id="L23" maxlength="10" style="margin-left: 5px;">
+                        <div class="input-group">
+                            <label>第二尖点 L2:</label>
+                            <input type="number" id="L23" maxlength="10">
                         </div>
-                        <div style="display: flex; align-items: center;">
-                            <label style="width: 15ch;">铜排厚度 T:</label>
-                            <input type="number" id="T3" maxlength="10" style="margin-left: 5px;">
+                        <div class="input-group">
+                            <label>铜排厚度 T:</label>
+                            <input type="number" id="T3" maxlength="10">
                         </div>
-                        <button onclick="calculateOption3()">计算</button>
+                        <button onclick="calculateOption3()" class="calc-btn">计算</button>
                         <div id="output3"></div>
                     </div>
-                </div>
-                <div style="flex: 1; display: flex; justify-content: center; align-items: flex-start;">
-                    <img src="picture/image3.png" alt="方案3" style="max-width: 100%; height: auto;">
                 </div>
             </div>
         `;
     } else if (option === 4) {
         inputOutputArea.innerHTML += `
-            <div style="display: flex; justify-content: space-between;">
-                <div style="flex: 1; padding-right: 20px;">
+            <div class="option-container">
+                <div class="image-section">
+                    <img src="picture/image4.png" alt="方案4" class="scheme-image">
+                </div>
+                <div class="input-section">
                     <h2>方案4</h2>
                     <h3>输入变量</h3>
                     <div>
-                        <div style="display: flex; align-items: center;">
-                            <label style="width: 15ch;">水平总长度 L:</label>
-                            <input type="number" id="L4" maxlength="10" style="margin-left: 5px;">
+                        <div class="input-group">
+                            <label>水平总长度 L:</label>
+                            <input type="number" id="L4" maxlength="10">
                         </div>
-                        <div style="display: flex; align-items: center;">
-                            <label style="width: 15ch;">垂直总长度 h:</label>
-                            <input type="number" id="h4" maxlength="10" style="margin-left: 5px;">
+                        <div class="input-group">
+                            <label>垂直总长度 h:</label>
+                            <input type="number" id="h4" maxlength="10">
                         </div>
-                        <div style="display: flex; align-items: center;">
-                            <label style="width: 15ch;">第一尖点 L1:</label>
-                            <input type="number" id="L14" maxlength="10" style="margin-left: 5px;">
+                        <div class="input-group">
+                            <label>第一尖点 L1:</label>
+                            <input type="number" id="L14" maxlength="10">
                         </div>
-                        <div style="display: flex; align-items: center;">
-                            <label style="width: 15ch;">第二尖点 L2:</label>
-                            <input type="number" id="L24" maxlength="10" style="margin-left: 5px;">
+                        <div class="input-group">
+                            <label>第二尖点 L2:</label>
+                            <input type="number" id="L24" maxlength="10">
                         </div>
-                        <div style="display: flex; align-items: center;">
-                            <label style="width: 15ch;">铜排厚度 T:</label>
-                            <input type="number" id="T4" maxlength="10" style="margin-left: 5px;">
+                        <div class="input-group">
+                            <label>铜排厚度 T:</label>
+                            <input type="number" id="T4" maxlength="10">
                         </div>
-                        <button onclick="calculateOption4()">计算</button>
+                        <button onclick="calculateOption4()" class="calc-btn">计算</button>
                         <div id="output4"></div>
                     </div>
-                </div>
-                <div style="flex: 1; display: flex; justify-content: center; align-items: flex-start;">
-                    <img src="picture/image4.png" alt="方案4" style="max-width: 100%; height: auto;">
                 </div>
             </div>
         `;
     } else if (option === 5) {
         inputOutputArea.innerHTML += `
-            <div style="display: flex; justify-content: space-between;">
-                <div style="flex: 1; padding-right: 20px;">
+            <div class="option-container">
+                <div class="image-section">
+                    <img src="picture/image5.png" alt="方案5" class="scheme-image">
+                </div>
+                <div class="input-section">
                     <h2>方案5</h2>
                     <h3>输入变量</h3>
                     <div>
-                        <div style="display: flex; align-items: center;">
-                            <label style="width: 15ch;">水平总长度 L:</label>
-                            <input type="number" id="L5" maxlength="10" style="margin-left: 5px;">
+                        <div class="input-group">
+                            <label>水平总长度 L1:</label>
+                            <input type="number" id="L51" maxlength="10">
                         </div>
-                        <div style="display: flex; align-items: center;">
-                            <label style="width: 15ch;">垂直总长度 h:</label>
-                            <input type="number" id="h5" maxlength="10" style="margin-left: 5px;">
+                        <div class="input-group">
+                            <label>水平长度 L2:</label>
+                            <input type="number" id="L52" maxlength="10">
                         </div>
-                        <div style="display: flex; align-items: center;">
-                            <label style="width: 15ch;">第一尖点 L1:</label>
-                            <input type="number" id="L15" maxlength="10" style="margin-left: 5px;">
+                        <div class="input-group">
+                            <label>垂直总长度 h:</label>
+                            <input type="number" id="h5" maxlength="10">
                         </div>
-                        <div style="display: flex; align-items: center;">
-                            <label style="width: 15ch;">第二尖点 L2:</label>
-                            <input type="number" id="L25" maxlength="10" style="margin-left: 5px;">
+                        <div class="input-group">
+                            <label>垂直长度 h1:</label>
+                            <input type="number" id="h51" maxlength="10">
                         </div>
-                        <div style="display: flex; align-items: center;">
-                            <label style="width: 15ch;">铜排厚度 T:</label>
-                            <input type="number" id="T5" maxlength="10" style="margin-left: 5px;">
+                        <div class="input-group">
+                            <label>垂直长度 h2:</label>
+                            <input type="number" id="h52" maxlength="10">
                         </div>
-                        <button onclick="calculateOption5()">计算</button>
+                        <div class="input-group">
+                            <label>铜排厚度 T:</label>
+                            <input type="number" id="T5" maxlength="10">
+                        </div>
+                        <button onclick="calculateOption5()" class="calc-btn">计算</button>
                         <div id="output5"></div>
                     </div>
-                </div>
-                <div style="flex: 1; display: flex; justify-content: center; align-items: flex-start;">
-                    <img src="picture/image5.png" alt="方案5" style="max-width: 100%; height: auto;">
                 </div>
             </div>
         `;
     } else if (option === 6) {
         inputOutputArea.innerHTML += `
-            <div style="display: flex; justify-content: space-between;">
-                <div style="flex: 1; padding-right: 20px;">
+            <div class="option-container">
+                <div class="image-section">
+                    <img src="picture/image6.png" alt="方案6" class="scheme-image">
+                </div>
+                <div class="input-section">
                     <h2>方案6</h2>
                     <h3>输入变量</h3>
                     <div>
-                        <div style="display: flex; align-items: center;">
-                            <label style="width: 15ch;">水平总长度 L:</label>
-                            <input type="number" id="L6" maxlength="10" style="margin-left: 5px;">
+                        <div class="input-group">
+                            <label>输入变量1:</label>
+                            <input type="number" id="var1" maxlength="10">
                         </div>
-                        <div style="display: flex; align-items: center;">
-                            <label style="width: 15ch;">垂直总长度 h:</label>
-                            <input type="number" id="h6" maxlength="10" style="margin-left: 5px;">
+                        <div class="input-group">
+                            <label>输入变量2:</label>
+                            <input type="number" id="var2" maxlength="10">
                         </div>
-                        <div style="display: flex; align-items: center;">
-                            <label style="width: 15ch;">第一尖点 L1:</label>
-                            <input type="number" id="L16" maxlength="10" style="margin-left: 5px;">
+                        <div class="input-group">
+                            <label>铜排厚度 T:</label>
+                            <input type="number" id="T6" maxlength="10">
                         </div>
-                        <div style="display: flex; align-items: center;">
-                            <label style="width: 15ch;">第二尖点 L2:</label>
-                            <input type="number" id="L26" maxlength="10" style="margin-left: 5px;">
-                        </div>
-                        <div style="display: flex; align-items: center;">
-                            <label style="width: 15ch;">铜排厚度 T:</label>
-                            <input type="number" id="T6" maxlength="10" style="margin-left: 5px;">
-                        </div>
-                        <button onclick="calculateOption6()">计算</button>
+                        <button onclick="calculateOption6()" class="calc-btn">计算</button>
                         <div id="output6"></div>
                     </div>
-                </div>
-                <div style="flex: 1; display: flex; justify-content: center; align-items: flex-start;">
-                    <img src="picture/image6.png" alt="方案6" style="max-width: 100%; height: auto;">
                 </div>
             </div>
         `;
@@ -298,6 +294,7 @@ function calculateOption2() {
         <p class="output-variable">铜排展开长度 L展: ${L展.toFixed(2)}</p>
         <p class="output-variable">第一折弯线位置 M1: ${M1.toFixed(2)}</p>
         <p class="output-variable">第二折弯线位置 M2: ${M2.toFixed(2)}</p>
+        <img src="picture/image7.png" alt="Image 7" style="max-width: 100%; height: auto; margin-top: 10px;">
     `;
 }
 
@@ -335,6 +332,7 @@ function calculateOption3() {
         <p class="output-variable">铜排展开长度 L展: ${L展.toFixed(2)}</p>
         <p class="output-variable">第一折弯线位置 M1: ${M1.toFixed(2)}</p>
         <p class="output-variable">第二折弯线位置 M2: ${M2.toFixed(2)}</p>
+        <img src="picture/image7.png" alt="Image 7" style="max-width: 100%; height: auto; margin-top: 10px;">
     `;
 }
 
@@ -378,6 +376,7 @@ function calculateOption4() {
         <p class="output-variable">铜排展开长度 L展: ${L展.toFixed(2)}</p>
         <p class="output-variable">第一折弯线位置 M1: ${M1.toFixed(2)}</p>
         <p class="output-variable">第二折弯线位置 M2: ${M2.toFixed(2)}</p>
+        <img src="picture/image7.png" alt="Image 7" style="max-width: 100%; height: auto; margin-top: 10px;">
     `;
 }
 
@@ -422,6 +421,7 @@ function calculateOption6() {
     document.getElementById('output6').innerHTML = `
         <h3>输出变量</h3>
         <p class="output-variable">其他输出变量: 待补充</p>
+        <img src="picture/image7.png" alt="Image 7" style="max-width: 100%; height: auto; margin-top: 10px;">
     `;
 }
 
