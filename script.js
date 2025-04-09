@@ -282,19 +282,16 @@ function calculateOption2() {
     }
 
     let K = 0.5;
-    let theta = Math.acos((h - L1) / L2);
-    let alpha = 180 - theta * (180 / Math.PI);
-    let BD = 2 * (R + T) * Math.tan(((180 - alpha) / 2) * (Math.PI / 180)) - ((180 - alpha) * Math.PI / 180) * (R + K * T);
-    let L展 = L1 + L2 - BD;
-    let M1 = (L1 + L2 - BD) / 2;
-    let M2 = 0;
+    let BD = 2 * (R + T) - Math.PI * (R + K * T) / 2;
+    let L展 = L1 + h + L2 - 2 * BD;
+    let M1 = L1 - (R + T) + Math.PI * (R + K * T) / 4;
+    let M2 = L2 - (R + T) + Math.PI * (R + K * T) / 4;
 
     // 显示输出区域并设置内容
     const outputElement = document.getElementById('output2');
     outputElement.style.display = 'block';
     outputElement.innerHTML = `
         <h3>输出变量</h3>
-        <p class="output-variable">折弯内角 α: ${alpha.toFixed(2)}°</p>
         <p class="output-variable">折弯扣除数 BD: ${BD.toFixed(2)}</p>
         <p class="output-variable">折弯内径 R: ${R}</p>
         <p class="output-variable">铜排展开长度 L展: ${L展.toFixed(2)}</p>
@@ -374,7 +371,7 @@ function calculateOption4() {
     let L3 = Math.sqrt((L - L1) ** 2 + (h - L2) ** 2);
     let theta = Math.atan((h - L2) / (L - L1));
     let alpha = 180 - theta * (180 / Math.PI);
-    let beta = 90 - theta * (180 / Math.PI);
+    let beta = 90 + theta * (180 / Math.PI);
     let BDα = 2 * (R + T) * Math.tan(((180 - alpha) / 2) * (Math.PI / 180)) - ((180 - alpha) * Math.PI / 180) * (R + K * T);
     let BDβ = 2 * (R + T) * Math.tan(((180 - beta) / 2) * (Math.PI / 180)) - ((180 - beta) * Math.PI / 180) * (R + K * T);
     let L展 = L1 + L3 + L2 - BDα - BDβ;
