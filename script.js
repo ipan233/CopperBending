@@ -39,7 +39,7 @@ function selectOption(option) {
                             <input type="number" id="T" maxlength="10">
                         </div>
                         <button onclick="calculateOption1()" class="calc-btn">计算</button>
-                        <div id="output"></div>
+                        <div id="output" style="display: none;"></div>
                     </div>
                 </div>
             </div>
@@ -71,7 +71,7 @@ function selectOption(option) {
                             <input type="number" id="T2" maxlength="10">
                         </div>
                         <button onclick="calculateOption2()" class="calc-btn">计算</button>
-                        <div id="output2"></div>
+                        <div id="output2" style="display: none;"></div>
                     </div>
                 </div>
             </div>
@@ -103,7 +103,7 @@ function selectOption(option) {
                             <input type="number" id="T3" maxlength="10">
                         </div>
                         <button onclick="calculateOption3()" class="calc-btn">计算</button>
-                        <div id="output3"></div>
+                        <div id="output3" style="display: none;"></div>
                     </div>
                 </div>
             </div>
@@ -139,7 +139,7 @@ function selectOption(option) {
                             <input type="number" id="T4" maxlength="10">
                         </div>
                         <button onclick="calculateOption4()" class="calc-btn">计算</button>
-                        <div id="output4"></div>
+                        <div id="output4" style="display: none;"></div>
                     </div>
                 </div>
             </div>
@@ -179,7 +179,7 @@ function selectOption(option) {
                             <input type="number" id="T5" maxlength="10">
                         </div>
                         <button onclick="calculateOption5()" class="calc-btn">计算</button>
-                        <div id="output5"></div>
+                        <div id="output5" style="display: none;"></div>
                     </div>
                 </div>
             </div>
@@ -207,7 +207,7 @@ function selectOption(option) {
                             <input type="number" id="T6" maxlength="10">
                         </div>
                         <button onclick="calculateOption6()" class="calc-btn">计算</button>
-                        <div id="output6"></div>
+                        <div id="output6" style="display: none;"></div>
                     </div>
                 </div>
             </div>
@@ -216,6 +216,9 @@ function selectOption(option) {
 }
 
 function calculateOption1() {
+    // 隐藏输出区域
+    document.getElementById('output').style.display = 'none';
+    
     const L = parseFloat(document.getElementById('L').value);
     const h = parseFloat(document.getElementById('h').value);
     const L1 = parseFloat(document.getElementById('L1').value);
@@ -234,24 +237,18 @@ function calculateOption1() {
         return;
     }
 
-    let term1 = (L - L1 - L2) * h - T * Math.sqrt((L - L1 - L2) ** 2 + h ** 2 - T ** 2);
-    let term2 = (L - L1 - L2) ** 2 - T ** 2;
-    let theta = Math.atan(term1 / term2) * (180 / Math.PI);
-    let alpha = 180 - theta;
-
     let K = 0.5;
-    let SB = (R + K * T) * Math.tan((theta / 2) * (Math.PI / 180));
-    let SB2 = (R + T) * Math.tan((theta / 2) * (Math.PI / 180));
-    let BA = (theta * Math.PI / 180) * (R + K * T);
-    let BD = 2 * SB - BA;
+    let theta = Math.acos((L - L1) / L2);
+    let alpha = 180 - theta * (180 / Math.PI);
+    let BD = 2 * (R + T) * Math.tan(((180 - alpha) / 2) * (Math.PI / 180)) - ((180 - alpha) * Math.PI / 180) * (R + K * T);
+    let L展 = L1 + L2 - BD;
+    let M1 = (L1 + L2 - BD) / 2;
+    let M2 = 0;
 
-    let L_total = (L1 - SB2 + SB) + Math.sqrt((L - (L1 - SB2 + SB) - (L2 - SB2 + SB)) ** 2 + (h - T) ** 2) + (L2 - SB2 + SB);
-    let L展 = L_total - 2 * BD;
-
-    let M1 = L1 - SB2 + SB;
-    let M2 = M1 + (L - (L1 - SB2 + SB) - (L2 - SB2 + SB));
-
-    document.getElementById('output').innerHTML = `
+    // 显示输出区域并设置内容
+    const outputElement = document.getElementById('output');
+    outputElement.style.display = 'block';
+    outputElement.innerHTML = `
         <h3>输出变量</h3>
         <p class="output-variable">折弯内角 α: ${alpha.toFixed(2)}°</p>
         <p class="output-variable">折弯扣除数 BD: ${BD.toFixed(2)}</p>
@@ -264,6 +261,9 @@ function calculateOption1() {
 }
 
 function calculateOption2() {
+    // 隐藏输出区域
+    document.getElementById('output2').style.display = 'none';
+    
     const h = parseFloat(document.getElementById('h2').value);
     const L1 = parseFloat(document.getElementById('L12').value);
     const L2 = parseFloat(document.getElementById('L22').value);
@@ -282,13 +282,19 @@ function calculateOption2() {
     }
 
     let K = 0.5;
-    let BD = 2 * (R + T) - Math.PI * (R + K * T) / 2;
-    let L展 = L1 + h + L2 - 2 * BD;
-    let M1 = L1 - R - T + Math.PI * (R + K * T) / 4;
-    let M2 = L2 - R - T + Math.PI * (R + K * T) / 4;
+    let theta = Math.acos((h - L1) / L2);
+    let alpha = 180 - theta * (180 / Math.PI);
+    let BD = 2 * (R + T) * Math.tan(((180 - alpha) / 2) * (Math.PI / 180)) - ((180 - alpha) * Math.PI / 180) * (R + K * T);
+    let L展 = L1 + L2 - BD;
+    let M1 = (L1 + L2 - BD) / 2;
+    let M2 = 0;
 
-    document.getElementById('output2').innerHTML = `
+    // 显示输出区域并设置内容
+    const outputElement = document.getElementById('output2');
+    outputElement.style.display = 'block';
+    outputElement.innerHTML = `
         <h3>输出变量</h3>
+        <p class="output-variable">折弯内角 α: ${alpha.toFixed(2)}°</p>
         <p class="output-variable">折弯扣除数 BD: ${BD.toFixed(2)}</p>
         <p class="output-variable">折弯内径 R: ${R}</p>
         <p class="output-variable">铜排展开长度 L展: ${L展.toFixed(2)}</p>
@@ -299,6 +305,9 @@ function calculateOption2() {
 }
 
 function calculateOption3() {
+    // 隐藏输出区域
+    document.getElementById('output3').style.display = 'none';
+    
     const L = parseFloat(document.getElementById('L3').value);
     const L1 = parseFloat(document.getElementById('L13').value);
     const L2 = parseFloat(document.getElementById('L23').value);
@@ -324,7 +333,10 @@ function calculateOption3() {
     let M1 = (L1 + L2 - BD) / 2;
     let M2 = 0;
 
-    document.getElementById('output3').innerHTML = `
+    // 显示输出区域并设置内容
+    const outputElement = document.getElementById('output3');
+    outputElement.style.display = 'block';
+    outputElement.innerHTML = `
         <h3>输出变量</h3>
         <p class="output-variable">折弯内角 α: ${alpha.toFixed(2)}°</p>
         <p class="output-variable">折弯扣除数 BD: ${BD.toFixed(2)}</p>
@@ -337,6 +349,9 @@ function calculateOption3() {
 }
 
 function calculateOption4() {
+    // 隐藏输出区域
+    document.getElementById('output4').style.display = 'none';
+    
     const L = parseFloat(document.getElementById('L4').value);
     const h = parseFloat(document.getElementById('h4').value);
     const L1 = parseFloat(document.getElementById('L14').value);
@@ -366,7 +381,10 @@ function calculateOption4() {
     let M1 = L1 + (0.5 * (R + K * T) - (R + T)) * Math.tan(((180 - alpha) / 2) * (Math.PI / 180));
     let M2 = L展 - (0.5 * (R + K * T) - (R + T)) * Math.tan(((180 - beta) / 2) * (Math.PI / 180));
 
-    document.getElementById('output4').innerHTML = `
+    // 显示输出区域并设置内容
+    const outputElement = document.getElementById('output4');
+    outputElement.style.display = 'block';
+    outputElement.innerHTML = `
         <h3>输出变量</h3>
         <p class="output-variable">折弯内角 α: ${alpha.toFixed(2)}°</p>
         <p class="output-variable">折弯内角 β: ${beta.toFixed(2)}°</p>
@@ -381,6 +399,9 @@ function calculateOption4() {
 }
 
 function calculateOption5() {
+    // 隐藏输出区域
+    document.getElementById('output5').style.display = 'none';
+    
     const L1 = parseFloat(document.getElementById('L51').value);
     const L2 = parseFloat(document.getElementById('L52').value);
     const h = parseFloat(document.getElementById('h5').value);
@@ -403,22 +424,32 @@ function calculateOption5() {
     // 方案5的计算逻辑待补充
     // 这里可以添加相应的计算逻辑
 
-    document.getElementById('output5').innerHTML = `
+    // 显示输出区域并设置内容
+    const outputElement = document.getElementById('output5');
+    outputElement.style.display = 'block';
+    outputElement.innerHTML = `
         <h3>输出变量</h3>
         <p class="output-variable">折弯内径 R: ${R}</p>
         <p class="output-variable">其他输出变量: 待补充</p>
+        <img src="picture/image7.png" alt="Image 7" style="max-width: 100%; height: auto; margin-top: 10px;">
     `;
 }
 
 // 方案6的计算逻辑可以在这里添加
 function calculateOption6() {
+    // 隐藏输出区域
+    document.getElementById('output6').style.display = 'none';
+    
     const var1 = parseFloat(document.getElementById('var1').value);
     const var2 = parseFloat(document.getElementById('var2').value);
     const T = parseFloat(document.getElementById('T6').value);
 
     // 方案6的计算逻辑待补充
 
-    document.getElementById('output6').innerHTML = `
+    // 显示输出区域并设置内容
+    const outputElement = document.getElementById('output6');
+    outputElement.style.display = 'block';
+    outputElement.innerHTML = `
         <h3>输出变量</h3>
         <p class="output-variable">其他输出变量: 待补充</p>
         <img src="picture/image7.png" alt="Image 7" style="max-width: 100%; height: auto; margin-top: 10px;">
