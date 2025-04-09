@@ -35,6 +35,7 @@ h1 {
 }
 
 #input-output-area {
+    display: none; /* 初始隐藏 */
     background-color: #fff; /* 输入输出区域背景颜色 */
     border-radius: 8px; /* 圆角 */
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* 阴影效果 */
