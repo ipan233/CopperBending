@@ -350,7 +350,7 @@ function calculateOption4() {
     let M1 = h1 - BD / 2;
     // 计算第二折弯线位置
     let M2 = L展1 - (h2 / 2 - BD / 2);
-	// 计算L形弯铜排展开长度
+	// 计算直角弯铜排展开长度
 	let L展2 = L1 + h2 / 2 - 2 * (R + T) + Math.PI * (R + K * T) / 2;
     // 计算第三折弯线位置
 	let M3 = L展1 + h2 / 2 - (R + T) + Math.PI * (R + K * T) / 4;
@@ -362,13 +362,13 @@ function calculateOption4() {
     outputElement.style.display = 'block';
     outputElement.innerHTML = `
         <h3>输出变量</h3>
-        <p class="output-variable">折弯内角 α: ${alpha.toFixed(2)}°</p>
-        <p class="output-variable">折弯扣除数 BD: ${BD.toFixed(2)}</p>
         <p class="output-variable">折弯内径 R: ${R}</p>
+        <p class="output-variable">水平弯折弯内角 α: ${alpha.toFixed(2)}°</p>
+        <p class="output-variable">水平弯折弯扣除数 BD: ${BD.toFixed(2)}</p>
         <p class="output-variable">铜排展开长度 L展: ${L展.toFixed(2)}</p>
-        <p class="output-variable">第一折弯线位置 M1: ${M1.toFixed(2)}</p>
-        <p class="output-variable">第二折弯线位置 M2: ${M2.toFixed(2)}</p>
-        <p class="output-variable">第三折弯线位置 M3: ${M3.toFixed(2)}</p>
+        <p class="output-variable">第一折弯线位置 M1（水平弯）: ${M1.toFixed(2)}</p>
+        <p class="output-variable">第二折弯线位置 M2（水平弯）: ${M2.toFixed(2)}</p>
+        <p class="output-variable">第三折弯线位置 M3（直角弯）: ${M3.toFixed(2)}</p>
         <img src="picture/image8.png" alt="Image 8" style="max-width: 100%; height: auto; margin-top: 10px;">
     `;
 }
