@@ -7,9 +7,8 @@
 ## 方案一的铜排折弯倾斜角θ推导过程
 
 根据方程 
-$$
-h - T = \left(L - L1 - L2 + 2KT\tan\frac{\theta}{2}\right)\tan\theta
-$$
+![公式](https://latex.codecogs.com/png.image?\dpi{130}h%20-%20T%20=%20\left(L%20-%20L1%20-%20L2%20+%202KT\tan\frac{\theta}{2}\right)\tan\theta)
+
 推导出 θ 的表达式如下：
 
 **步骤解析：**
