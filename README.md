@@ -1,6 +1,7 @@
 # Copper Bending 铜排折弯展开计算
 本项目主要针对铜排折弯的平弯，目前有4种常见折弯图形。其他特殊图形一般都可以分解成这几种。如有特殊图形，可以提[issue](https://github.com/ipan233/CopperBending/issues)。
-在线工具地址：[Copper Bending](https://copper-bending.vercel.app/)
+
+### 在线工具地址：[Copper Bending](https://copper-bending.vercel.app/)
 
 ### 注意：
 1. 本项目方案图形标注尺寸位置为外尺寸！
