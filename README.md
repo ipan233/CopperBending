@@ -37,13 +37,7 @@ $$
 
 ![公式](https://latex.codecogs.com/png.image?\dpi{130}x%20=%20\tan\frac{\theta}{2})
 
-   故：
+**故，最终公式：**
 
 ![公式](https://latex.codecogs.com/png.image?\dpi{130}\theta%20=%202\arctan\left(\frac{-(L%20-%20L1%20-%20L2)%20+%20\sqrt{(L%20-%20L1%20-%20L2)^2%20+%20(h%20-%20T)^2%20+%204KT(h%20-%20T)}}{h%20-%20T%20+%204KT}\right))
 
-   
-
-**最终公式：**
-$$
-\theta = 2\arctan\left( \frac{-(L - L1 - L2) + \sqrt{(L - L1 - L2)^2 + (h - T)^2 + 4KT(h - T)}}{h - T + 4KT} \right)
-$$
