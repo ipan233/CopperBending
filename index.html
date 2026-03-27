@@ -1,22 +1,12 @@
 <!DOCTYPE html>
 <html lang="zh">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="styles.css">
-    <title>Copper Bending Calculator</title>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Copper Bending Calculator</title>
 </head>
 <body>
-    <div class="container">
-        <h1>根据图形选择折弯方案</h1>
-        <div class="image-grid">
-            <img src="/picture/image1.png" alt="方案1" class="bending-option" onclick="selectOption(1)">
-            <img src="/picture/image2.png" alt="方案2" class="bending-option" onclick="selectOption(2)">
-            <img src="/picture/image3.png" alt="方案3" class="bending-option" onclick="selectOption(3)">
-            <img src="/picture/image4.png" alt="方案4" class="bending-option" onclick="selectOption(4)">
-        </div>
-        <div id="input-output-area"></div>
-    </div>
-    <script src="script.js"></script>
+  <div id="app"></div>
+  <script type="module" src="/src/main.js"></script>
 </body>
 </html>
