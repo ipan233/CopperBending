@@ -163,13 +163,14 @@ button:hover {
 }
 
 .input-group label {
-    width: 15ch;
+    flex-shrink: 0;
     margin: 0;
     font-weight: 500;
 }
 
 .input-group input {
-    max-width: 12ch;
+    flex: 1;
+    min-width: 0;
     margin-left: 8px;
 }
 
@@ -193,6 +194,7 @@ button:hover {
     padding: 10px 20px;
     border-radius: 5px;
     font-weight: 500;
+    min-height: 44px;
 }
 
 .calc-btn:hover {
@@ -242,4 +244,27 @@ h3 {
     color: #333;
     border-bottom: 1px solid #eee;
     padding-bottom: 10px;
+}
+
+/* 超小屏幕适配（< 375px） */
+@media screen and (max-width: 374px) {
+    body {
+        padding: 12px 8px;
+    }
+    h1 {
+        font-size: 18px;
+    }
+    .calc-btn {
+        max-width: 100%;
+        width: 100%;
+    }
+    .input-group {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 4px;
+    }
+    .input-group input {
+        width: 100%;
+        margin-left: 0;
+    }
 }
